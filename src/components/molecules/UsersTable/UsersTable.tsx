@@ -48,9 +48,9 @@ const UsersTable = ({
         <div className='bottomRow'>
         <p className='titleRow'>Opciones</p>
         <div className='buttonWrapper'>
-          <button className="buttonContainer">
+          <Link to="/edit-user" className="buttonContainer">
              <p className= "title">{"Editar"}</p>
-         </button>
+         </Link>
          <button className="buttonContainer" >
              <p className= "title">{"Eliminar"}</p>
          </button>
