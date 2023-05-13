@@ -1,0 +1,56 @@
+@import "./styles/Mixin.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background-color: #7CC6FE;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+/* a {
+  font-size: 18px;
+  font-weight: 500;
+  color: black;
+  text-decoration: none;
+
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 0;
+  cursor: pointer;
+
+} */
+
+input,
+select,
+button {
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+}
+
+button {
+  background: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  outline: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+

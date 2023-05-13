@@ -1,0 +1,53 @@
+@import "../../../styles/Mixin.scss";
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600&display=swap');
+
+
+.questionnaireContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 16px;
+    width: 380px;
+    background-color: #252D4A;
+    border-radius: 24px;
+    margin-bottom: 20px;
+    font-family: 'Barlow Condensed', sans-serif;
+   
+    @include medium {
+       width: 700px;
+    }
+   
+   .infoWrapper {
+       display: flex;
+       flex-direction: column;
+       margin-bottom: 6px;
+   
+       .columnTitle {
+        font-family: 'Bebas Neue', sans-serif;
+        color: #38B6FF;
+        font-size: 34px;
+       }
+   
+       .description {
+           color: white;
+           font-size: 20px;
+           width: 202px;
+           word-wrap: break-word;
+   
+           @include medium {
+               width: 420px;
+           }
+
+           .link {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+           }
+
+           .link:hover {
+            color: #7CC6FE;
+           }
+       }
+   }
+   
+   
+   }

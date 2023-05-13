@@ -1,0 +1,54 @@
+$small-width: 576px;
+$medium-width: 768px;
+$large-width: 992px;
+$extraLarge-width: 1200px;
+
+@mixin small {
+  @media screen and (min-width: #{$small-width}) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media screen and (min-width: #{$medium-width}) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media screen and (min-width: #{$large-width}) {
+    @content;
+  }
+}
+
+@mixin extraLarge {
+  @media screen and (min-width: #{$extraLarge-width}) {
+    @content;
+  }
+}
+
+@mixin wrapper {
+  .wrapper {
+    width: 100vw;
+    padding: 60px 12px 0 12px;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    @include medium {
+      width: 768px;
+      margin-top: 3.5rem;
+    }
+
+    @include large {
+      width: 992px;
+      padding: 0 30px;
+    }
+
+    @include extraLarge {
+      width: 1200px;
+      padding: 0 124px;
+    }
+
+    @content;
+  }
+}
