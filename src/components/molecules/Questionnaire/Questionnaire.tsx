@@ -1,33 +1,46 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import "./Questionnaire.scss";
 
-interface QuestionnaireProps {
-    id_questionnaire:string,
-    description: string
 
-}
 
-const Questionnaire = ({
-    id_questionnaire,
-    description
+export const Questionnaire = ({
+}) => {
+const [data, setData] = useState([])
+const fetchJson = () => {
+  fetch('questionnaireTypes.json')
+  .then(response => {
+    return response.json();
+  }).then(data => {
+    setData(data);
+  }).catch((e: Error) => {
+    console.log(e.message);
+  });
 }
-: QuestionnaireProps) => {
+useEffect(() => {
+  fetchJson()
+},[])
 
   return (
     <div className='questionnaireContainer'>
-        <div className='infoWrapper'>
+          {data.map((item:any, index) => {
+          return (
+        <div key={index}>
+          <div className='infoWrapper' >
           <p className='columnTitle'>Tipo</p>
-          <p className='description'>
-          <Link to="/users" className="link">{id_questionnaire}</Link>
-          </p>
-          
-        </div>
+            <p className='description'>
+            <Link to="/users" className="link">{item.id_questionnaire}</Link>
+            </p>
+            </div>
         <div className='infoWrapper'>
           <p className='columnTitle'>Descripcion</p>
-          <p className='description'>{description}</p>
+            <p className='description'>{item.description}</p>
         </div>
+        </div>
+      
+          );
+        })}
     </div>
   )
 }
-export default Questionnaire;
+;

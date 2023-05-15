@@ -1,0 +1,44 @@
+[
+    {
+      "name": "Matias",
+      "lastName": "Sosa", 
+      "email": "matias.sosa@gmail.com",
+      "telephoneNumber": 35928494002
+    },
+    {
+        "name": "Florencia",
+        "lastName": "Diaz", 
+        "email": "florencia.diaz@gmail.com",
+        "telephoneNumber": 359259375739
+    },
+    {
+        "name": "Federico",
+        "lastName": "Sosa", 
+        "email": "federico.sosa@gmail.com",
+        "telephoneNumber": 35928448583
+    },
+    {
+        "name": "Carlos",
+        "lastName": "Vera", 
+        "email": "carlos.vera@gmail.com",
+        "telephoneNumber": 3592849487484
+    },
+    {
+        "name": "Ana",
+        "lastName": "Perez", 
+        "email": "ana.perez@gmail.com",
+        "telephoneNumber": 3592849482929
+    },
+    {
+        "name": "Andres",
+        "lastName": "Lopez", 
+        "email": "andres.lopez@gmail.com",
+        "telephoneNumber": 35928433839
+    },
+    {
+        "name": "Belen",
+        "lastName": "ruiz", 
+        "email": "belen.ruiz@gmail.com",
+        "telephoneNumber": 359284979383
+    }
+  ]

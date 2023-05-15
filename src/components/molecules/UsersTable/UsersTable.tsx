@@ -7,7 +7,8 @@ interface UsersTableProps {
     name: string,
     lastName: string,
     email: string,
-    telephoneNumber: number
+    telephoneNumber: number,
+    id?: string;
 
 }
 
@@ -16,9 +17,22 @@ const UsersTable = ({
     name,
     lastName,
     email,
-    telephoneNumber
+    telephoneNumber,
+    id
 }
 : UsersTableProps) => {
+
+  const deleteUser = ((id:any) => {
+      if(window.confirm("Desea eliminar este usuario ?")){
+          fetch('usersData.json'+id,
+          {method: "DELETE"}).then(() => {
+            window.location.reload()
+          }).catch((err) => {
+            console.log(err);
+          })
+      }
+  })
+
 
   return (
     <div className='usersContainer'>
@@ -51,7 +65,7 @@ const UsersTable = ({
           <Link to="/edit-user" className="buttonContainer">
              <p className= "title">{"Editar"}</p>
          </Link>
-         <button className="buttonContainer" >
+         <button className="buttonContainer" onClick={() =>{deleteUser(id)} }>
              <p className= "title">{"Eliminar"}</p>
          </button>
         </div>

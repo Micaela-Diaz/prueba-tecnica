@@ -2,13 +2,11 @@ import React from "react";
 import { Questionnaire } from '../../molecules';
 import "./Home.scss";
 
-const Home = () => {
-
+export const Home = () => {
   return (
-    <div className="Home">
+      <div className="Home">
       <h1 className="mainTitle">Cuestionarios</h1>
-      <Questionnaire id_questionnaire={"1"} description={"Cuestionario 1"}/>
+      <Questionnaire/>
     </div>
   );
 };
-export default Home;
