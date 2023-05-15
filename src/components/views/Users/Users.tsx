@@ -1,13 +1,10 @@
 import React, {useState, useEffect} from "react";
 import { UsersUnassigned } from '../../molecules';
-import { useParams } from 'react-router-dom';
 import "./Users.scss";
 
 
 const Users = () => {
-    const id = 1;
     const [data, setData] = useState([]);
-    const [userFiltered, setUserFiltered] = useState([]);
     const fetchJson = () => {
       fetch('usersData.json')
       .then(response => {

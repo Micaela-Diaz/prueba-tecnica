@@ -9,7 +9,7 @@ interface QuestionnaireProps {
 
 export const Questionnaire = ({ isAssigned
 }: QuestionnaireProps) => {
-const [data, setData] = useState([])
+const [data, setData] = useState([]);
 const fetchJson = () => {
   fetch('questionnaireTypes.json')
   .then(response => {

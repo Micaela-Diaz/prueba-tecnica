@@ -1,16 +1,13 @@
 import React, {useState, useEffect} from "react";
 import { UsersAssigned } from '../../molecules';
-import { useParams } from 'react-router-dom';
 import "./UsersAssignedView.scss";
 
 
 const UsersAssignedView = () => {
-    /* const { id } = useParams(); */
-    const id = 1;
     const [data, setData] = useState([]);
     const [userFiltered, setUserFiltered] = useState([]);
     const fetchJson = () => {
-      fetch('usersAssigned1Data.json')
+      fetch('usersAssignedData.json')
       .then(response => {
         return response.json();
       }).then(data => {
@@ -23,22 +20,21 @@ const UsersAssignedView = () => {
       fetchJson()
     },[]);
 
-/*      useEffect(() => {
-      if (data.length > 0) {
-        const dataFiltered= data.filter((data:any) => data.id_questionnaire_assigned === id)
-        setUserFiltered(dataFiltered)
-      }
-    },[data]); */
+    useEffect(() => {
+        if (data.length > 0) {
+          const dataFiltered= data.filter((data:any) => data.id_questionnaire_assigned === 1)
+          setUserFiltered(dataFiltered)
+        }
+      },[data]);
 
-   function message () { 
-      alert('Usuarios asignados correctamente !')
-      window.location.assign("./questionnaires-assigned")
-    };
+      console.log(userFiltered)
+
+    
 
   return (
     <div className="UsersAssignedView">
       <h1 className="mainTitle">Usuarios asignados</h1>
-      {data.map((i:any) => {
+      {userFiltered.map((i:any) => {
           return (
             <p className='description'>
             <UsersAssigned
@@ -51,7 +47,6 @@ const UsersAssignedView = () => {
             </p>
           );
         })}
-      <button type="submit" onClick={message}>Enviar</button>
     </div>
   );
 };

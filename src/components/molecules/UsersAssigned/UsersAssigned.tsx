@@ -26,7 +26,7 @@ export const UsersAssigned = ({
       if(window.confirm("Desea eliminar este usuario ?")){
           fetch('usersData.json'+id,
           {method: "DELETE"}).then(() => {
-            window.location.reload()
+            window.location.assign("./questionnaires-assigned")
           }).catch((err) => {
             console.log(err);
           })
