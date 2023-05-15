@@ -3,7 +3,9 @@ import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import {
   Home,
   Users,
-  EditUsersView
+  EditUsersView,
+  QuestionnairesAssignedView,
+  UsersAssignedView
 } from "./components/views";
 import './App.scss';
 
@@ -15,6 +17,8 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/users' element={<Users/>}/>
           <Route path='/edit-user' element={<EditUsersView/>}/>
+          <Route path='/questionnaires-assigned' element={<QuestionnairesAssignedView/>}/>
+          <Route path='/users-assigned' element={<UsersAssignedView/>}/>
         </Routes>
       </BrowserRouter>
     </div>

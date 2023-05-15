@@ -1,3 +1,4 @@
 export { Questionnaire} from "./Questionnaire";
-export { UsersTable } from "./UsersTable";
+export { UsersAssigned } from "./UsersAssigned";
+export { UsersUnassigned } from "./UsersUnassigned";
 export { EditUser } from "./EditUser";

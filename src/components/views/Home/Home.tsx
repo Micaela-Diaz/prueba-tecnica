@@ -6,7 +6,7 @@ export const Home = () => {
   return (
       <div className="Home">
       <h1 className="mainTitle">Cuestionarios</h1>
-      <Questionnaire/>
+      <Questionnaire isAssigned={true}/>
     </div>
   );
 };

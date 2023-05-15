@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-.Users {
+.QuestionnairesAssignedView {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,20 +12,5 @@
         color: #045AA6;
         font-size: 48px;
         margin-bottom: 28px;
-    }
-
-    button {
-        width: 92px;
-        height: 38px;
-        background-color: #38B6FF;
-        color: white;
-        font-size: 22px;
-        border-radius: 6px;
-        border: none;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
     }
 }

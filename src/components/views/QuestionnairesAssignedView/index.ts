@@ -1,0 +1,1 @@
+export { QuestionnairesAssignedView } from "./QuestionnairesAssignedView";

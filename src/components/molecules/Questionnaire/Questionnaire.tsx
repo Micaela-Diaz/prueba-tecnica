@@ -2,10 +2,13 @@ import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import "./Questionnaire.scss";
 
+interface QuestionnaireProps {
+  isAssigned: boolean;
+}
 
 
-export const Questionnaire = ({
-}) => {
+export const Questionnaire = ({ isAssigned
+}: QuestionnaireProps) => {
 const [data, setData] = useState([])
 const fetchJson = () => {
   fetch('questionnaireTypes.json')
@@ -29,7 +32,12 @@ useEffect(() => {
           <div className='infoWrapper' >
           <p className='columnTitle'>Tipo</p>
             <p className='description'>
-            <Link to="/users" className="link">{item.id_questionnaire}</Link>
+            {
+              isAssigned ? 
+              <Link to="/users" className="link">{item.id_questionnaire}</Link>
+              : 
+              <Link to="/users-assigned" className="link">{item.id_questionnaire}</Link>
+            }
             </p>
             </div>
         <div className='infoWrapper'>

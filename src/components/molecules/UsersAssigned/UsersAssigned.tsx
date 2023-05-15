@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import "./UsersTable.scss";
+import "./UsersAssigned.scss";
 
-interface UsersTableProps {
+interface UsersAssignedProps {
     id_questionnaire_assigned: string,
     name: string,
     lastName: string,
@@ -12,7 +12,7 @@ interface UsersTableProps {
 
 }
 
-const UsersTable = ({
+export const UsersAssigned = ({
     id_questionnaire_assigned,
     name,
     lastName,
@@ -20,7 +20,7 @@ const UsersTable = ({
     telephoneNumber,
     id
 }
-: UsersTableProps) => {
+: UsersAssignedProps) => {
 
   const deleteUser = ((id:any) => {
       if(window.confirm("Desea eliminar este usuario ?")){
@@ -72,5 +72,4 @@ const UsersTable = ({
         </div>
     </div>
   )
-}
-export default UsersTable;
+};

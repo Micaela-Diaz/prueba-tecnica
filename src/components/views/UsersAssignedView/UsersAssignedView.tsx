@@ -1,15 +1,16 @@
 import React, {useState, useEffect} from "react";
-import { UsersUnassigned } from '../../molecules';
+import { UsersAssigned } from '../../molecules';
 import { useParams } from 'react-router-dom';
-import "./Users.scss";
+import "./UsersAssignedView.scss";
 
 
-const Users = () => {
+const UsersAssignedView = () => {
+    /* const { id } = useParams(); */
     const id = 1;
     const [data, setData] = useState([]);
     const [userFiltered, setUserFiltered] = useState([]);
     const fetchJson = () => {
-      fetch('usersData.json')
+      fetch('usersAssigned1Data.json')
       .then(response => {
         return response.json();
       }).then(data => {
@@ -21,19 +22,27 @@ const Users = () => {
     useEffect(() => {
       fetchJson()
     },[]);
-    
+
+/*      useEffect(() => {
+      if (data.length > 0) {
+        const dataFiltered= data.filter((data:any) => data.id_questionnaire_assigned === id)
+        setUserFiltered(dataFiltered)
+      }
+    },[data]); */
+
    function message () { 
       alert('Usuarios asignados correctamente !')
       window.location.assign("./questionnaires-assigned")
     };
 
   return (
-    <div className="Users">
-      <h1 className="mainTitle">Asignar usuarios</h1>
+    <div className="UsersAssignedView">
+      <h1 className="mainTitle">Usuarios asignados</h1>
       {data.map((i:any) => {
           return (
             <p className='description'>
-            <UsersUnassigned
+            <UsersAssigned
+            id_questionnaire_assigned={i.id_questionnaire_assigned}
             name={i.name} 
             lastName={i.lastName} 
             email={i.email} 
@@ -46,4 +55,4 @@ const Users = () => {
     </div>
   );
 };
-export default Users;
+export default UsersAssignedView;
