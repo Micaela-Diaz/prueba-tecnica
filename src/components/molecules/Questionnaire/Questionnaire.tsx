@@ -10,6 +10,8 @@ interface QuestionnaireProps {
 export const Questionnaire = ({ isAssigned
 }: QuestionnaireProps) => {
 const [data, setData] = useState([]);
+
+ //funcion para traer los cuestionarios existentes
 const fetchJson = () => {
   fetch('questionnaireTypes.json')
   .then(response => {

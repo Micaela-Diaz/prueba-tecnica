@@ -6,6 +6,8 @@ import "./UsersAssignedView.scss";
 const UsersAssignedView = () => {
     const [data, setData] = useState([]);
     const [userFiltered, setUserFiltered] = useState([]);
+
+     //funcion para traer los usarios sin asignar
     const fetchJson = () => {
       fetch('usersAssignedData.json')
       .then(response => {
@@ -25,11 +27,7 @@ const UsersAssignedView = () => {
           const dataFiltered= data.filter((data:any) => data.id_questionnaire_assigned === 1)
           setUserFiltered(dataFiltered)
         }
-      },[data]);
-
-      console.log(userFiltered)
-
-    
+      },[data]);    
 
   return (
     <div className="UsersAssignedView">

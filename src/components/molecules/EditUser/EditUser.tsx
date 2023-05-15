@@ -4,6 +4,7 @@ import "./EditUser.scss";
 
 
 const EditUser = () => {
+     //mensaje de confirmación de la solicitud
     function message () { 
         alert('Usuario editado exitosatamente !')
         window.location.assign("./users-assigned")

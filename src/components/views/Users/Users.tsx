@@ -5,6 +5,8 @@ import "./Users.scss";
 
 const Users = () => {
     const [data, setData] = useState([]);
+
+  //funcion para traer los usarios sin asignar
     const fetchJson = () => {
       fetch('usersData.json')
       .then(response => {
@@ -18,7 +20,8 @@ const Users = () => {
     useEffect(() => {
       fetchJson()
     },[]);
-    
+
+    //mensaje de confirmación de la solicitud
    function message () { 
       alert('Usuarios asignados correctamente !')
       window.location.assign("./questionnaires-assigned")

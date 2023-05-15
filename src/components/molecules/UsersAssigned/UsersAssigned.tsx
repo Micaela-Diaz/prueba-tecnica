@@ -22,6 +22,8 @@ export const UsersAssigned = ({
 }
 : UsersAssignedProps) => {
 
+
+   //funcion para eliminar el usuario
   const deleteUser = ((id:any) => {
       if(window.confirm("Desea eliminar este usuario ?")){
           fetch('usersData.json'+id,
